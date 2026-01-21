@@ -1,0 +1,26 @@
+{
+  "version": 3,
+  "configurePresets": 
+  [
+    {
+      "name": "linux-debug",
+      "displayName": "Linux Debug",
+      "description": "Linux Debug构建",
+      "generator": "Unix Makefiles",
+      "binaryDir": "build",
+      "cacheVariables": 
+      {
+        "CMAKE_C_COMPILER": "gcc",
+        "CMAKE_CXX_COMPILER": "g++",
+        "CMAKE_CXX_FLAGS": "-g -Wall -Wextra -pthread",
+        "CMAKE_TOOLCHAIN_FILE": "/opt/vcpkg/scripts/buildsystems/vcpkg.cmake"
+      },
+      "condition": 
+      {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Linux"
+      }
+    }
+  ]
+}

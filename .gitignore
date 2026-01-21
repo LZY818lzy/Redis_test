@@ -1,0 +1,62 @@
+# CMake build directories（CMake 构建目录）
+build/
+bin/
+
+# Compiled Object files（编译的目标文件）
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers（预编译头文件）
+*.gch
+*.pch
+
+# Compiled Dynamic libraries（编译的动态库）
+*.so
+*.dylib
+*.dll
+
+# Fortran module files（Fortran 模块文件）
+*.mod
+*.smod
+
+# Compiled Static libraries（编译的静态库）
+#*.lai
+#*.la
+#*.a
+#*.lib
+
+# Executables（可执行文件）
+*.exe
+*.out
+*.app
+
+# CMake generated files （CMake 生成的文件）
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+compile_commands.json
+CMakeConfigureLog.yaml
+CMakeDirectoryInformation.cmake
+InstallScripts.json
+Makefile.cmake
+Makefile2
+progress.marks
+
+# IDE files（IDE 文件）
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files（操作系统生成的文件）
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
