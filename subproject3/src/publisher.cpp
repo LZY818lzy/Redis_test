@@ -21,13 +21,12 @@ int main() {
         int redis_port = config.GetIntDefault("port", 6379);
         std::string redis_password = config.GetStringDefault("password", "ggl2e=mc2");    
 
-        // 创建 Redis 连接——connection string 形式
-        std::stringstream conn_info;
-        conn_info << "tcp://" << redis_host << ":" << redis_port;
-        if (!redis_password.empty()) {
-            conn_info << "?password=" << redis_password;
-        }
-        auto redis = sw::redis::Redis(conn_info.str());
+        // 使用 ConnectionOptions 创建 Redis 连接
+        sw::redis::ConnectionOptions conn_opts;
+        conn_opts.host = redis_host;           // 主机地址
+        conn_opts.port = redis_port;           // 端口号
+        conn_opts.password = redis_password;   // 密码（包含特殊字符也没问题）
+        auto redis = sw::redis::Redis(conn_opts);
         
         std::cout << "=== Redis 发布者 ===" << std::endl;
         std::cout << "已连接到: " << redis_host << ":" << redis_port << std::endl;
